@@ -166,9 +166,9 @@ graph TD
     end
 
     %% Styles
-    classDef planning fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
-    classDef execution fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;
-    classDef transition fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
+    classDef planning fill:#f0f9ff,stroke:#0284c7,stroke-width:2px,color:#0369a1,font-weight:bold;
+    classDef execution fill:#f0fdf4,stroke:#16a34a,stroke-width:2px,color:#15803d,font-weight:bold;
+    classDef transition fill:#fffbeb,stroke:#d97706,stroke-width:2px,color:#b45309,font-weight:bold;
     
     class A,B,C,D planning;
     class E transition;
