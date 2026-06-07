@@ -121,7 +121,9 @@ Organizing a Kanplan team requires shifting focus from "sprint commitment" to "f
 1. **Flow Over Utilization**: Optimize the system for the speed of the work item, not the busy-ness of the worker.
 2. **Visualize Everything**: Ensure all technical work, including tech debt, automated testing tasks, and support tickets, is represented as cards on the board or backlog.
 3. **Decouple Planning from Execution**: Allow product management to plan continuously without disrupting development flow, and developers to execute continuously without sprint planning pressure.
-4. **Manage Bottlenecks Immediately**: Swarm on blockers. A blocked card is a system-wide failure, not just one developer's problem.\n\n## 8. Multi-Project Management in Kanplan
+4. **Manage Bottlenecks Immediately**: Swarm on blockers. A blocked card is a system-wide failure, not just one developer's problem.
+
+## 8. Multi-Project Management in Kanplan
 Managing multiple projects on a single Kanplan board is highly effective when a **single development team** is responsible for delivering work across those projects. 
 
 ### When to Combine (Single Board)
@@ -171,4 +173,4 @@ graph TD
     class A,B,C,D planning;
     class E transition;
     class F,G,H,I,J execution;
-```\n
+```
