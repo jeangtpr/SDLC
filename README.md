@@ -121,4 +121,54 @@ Organizing a Kanplan team requires shifting focus from "sprint commitment" to "f
 1. **Flow Over Utilization**: Optimize the system for the speed of the work item, not the busy-ness of the worker.
 2. **Visualize Everything**: Ensure all technical work, including tech debt, automated testing tasks, and support tickets, is represented as cards on the board or backlog.
 3. **Decouple Planning from Execution**: Allow product management to plan continuously without disrupting development flow, and developers to execute continuously without sprint planning pressure.
-4. **Manage Bottlenecks Immediately**: Swarm on blockers. A blocked card is a system-wide failure, not just one developer's problem.
+4. **Manage Bottlenecks Immediately**: Swarm on blockers. A blocked card is a system-wide failure, not just one developer's problem.\n\n## 8. Multi-Project Management in Kanplan
+Managing multiple projects on a single Kanplan board is highly effective when a **single development team** is responsible for delivering work across those projects. 
+
+### When to Combine (Single Board)
+* **Shared Team Capacity**: If the same group of developers pulls work from different projects, combining them under one board ensures that WIP limits are respected and developers are not multitasking.
+* **Unified Prioritization**: It allows the Product Owner to rank and prioritize all work items relative to each other in one single backlog list.
+* **How to Organize**:
+  * **Use Quick Filters**: Create quick buttons on the board to filter by Project (e.g., `project = ProjectA`).
+  * **Use Swimlanes**: Group the execution board by Epic or Project to keep the active columns organized.
+
+### When to Separate (Multiple Boards)
+* **Different Teams**: If different teams own different projects, separate the boards to prevent noise and clutter.
+* **Distinct Workflows**: If one project requires a heavy QA/Compliance cycle while another is a simple design-to-deploy workflow, separate the boards.
+
+---
+
+## 9. Kanplan SDLC Lifecycle Diagram
+The flow below illustrates how a work item transitions from raw backlog triage to execution and deployment:
+
+```mermaid
+graph TD
+    %% Planning Mode (Backlog)
+    subgraph Planning ["Planning Mode (Backlog View)"]
+        A[Intake / Triage] --> B[Backlog Refinement]
+        B --> C{Definition of Ready?}
+        C -- No --> B
+        C -- Yes --> D[Prioritized Backlog]
+    end
+
+    %% Transition Point
+    D --> E[Selected for Development]
+    
+    %% Execution Mode (Active Board)
+    subgraph Execution ["Execution Mode (Active Board View)"]
+        E --> F[In Progress (Development)]
+        F --> G[Peer Review / PR]
+        G --> H[QA Verification]
+        H --> I{Definition of Done?}
+        I -- No --> F
+        I -- Yes --> J[Done]
+    end
+
+    %% Styles
+    classDef planning fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
+    classDef execution fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;
+    classDef transition fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
+    
+    class A,B,C,D planning;
+    class E transition;
+    class F,G,H,I,J execution;
+```\n
