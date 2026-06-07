@@ -146,23 +146,23 @@ The flow below illustrates how a work item transitions from raw backlog triage t
 graph TD
     %% Planning Mode (Backlog)
     subgraph Planning ["Planning Mode (Backlog View)"]
-        A[Intake / Triage] --> B[Backlog Refinement]
-        B --> C{Definition of Ready?}
+        A["Intake / Triage"] --> B["Backlog Refinement"]
+        B --> C{"Definition of Ready?"}
         C -- No --> B
-        C -- Yes --> D[Prioritized Backlog]
+        C -- Yes --> D["Prioritized Backlog"]
     end
 
     %% Transition Point
-    D --> E[Selected for Development]
+    D --> E["Selected for Development"]
     
     %% Execution Mode (Active Board)
     subgraph Execution ["Execution Mode (Active Board View)"]
-        E --> F[In Progress (Development)]
-        F --> G[Peer Review / PR]
-        G --> H[QA Verification]
-        H --> I{Definition of Done?}
+        E --> F["In Progress (Development)"]
+        F --> G["Peer Review / PR"]
+        G --> H["QA Verification"]
+        H --> I{"Definition of Done?"}
         I -- No --> F
-        I -- Yes --> J[Done]
+        I -- Yes --> J["Done"]
     end
 
     %% Styles
